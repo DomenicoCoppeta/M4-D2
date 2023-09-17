@@ -1,9 +1,5 @@
 function search() {
     const artist = document.getElementById("searchField").value;
-    getMusic(artist)
-}
-
-function getMusic(artist) {
     fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${artist}`)
         .then(response => response.json())
         .then(displayMusic)
@@ -16,7 +12,7 @@ function displayMusic(albums) {
     console.log(albums);
     const albumsRow = document.createElement("div")
     albumsRow.classList.add("row", "albumsRow");
-    const searchTitle = document.createElement("h2");
+    const searchTitle = document.createElement("h2")
     searchTitle.classList.add("searchTitle");
     searchTitle.style.color = "white";
     searchTitle.innerHTML = document.getElementById("searchField").value;
